@@ -13,9 +13,19 @@ function addTask(){
 
     let li = document.createElement("li");
 
-    li.innerText = taskValue;
+    li.innerHTML = `
+        ${taskValue}
+        <button onclick="deleteTask(this)">
+            X
+        </button>
+    `;
 
     taskList.appendChild(li);
 
     taskInput.value = "";
+}
+
+function deleteTask(button){
+
+    button.parentElement.remove();
 }
